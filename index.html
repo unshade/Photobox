@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"   href="css/photobox.css">
+
+    <title>photobox</title>
+</head>
+<body>
+
+<nav>
+    <button id="load_gallery">load</button>
+    <button id="previous">prev page</button>
+    <button id="next">next page</button>
+</nav>
+
+
+<main id="gallery">
+
+     <div class="gallery-container" id="gallery_container">
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/phox/photos/100"
+           src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38dc3123d.jpg">
+       </div>
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/phox/photos/101"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38dbc84ac.jpg">
+       </div>
+
+       <div class="vignette">
+         <img  data-uri="/www/canals5/phox/photos/102"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38db67677.jpg">
+       </div>
+
+       <div class="vignette">
+         <img  data-uri="/www/canals5/phox/photos/103"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38db0444d.jpg">
+       </div>
+
+       <div class="vignette">
+         <img  data-uri="/www/canals5/phox/photos/104"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38daa09e8.jpg">
+       </div>
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/phox/photos/100"
+           src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38dc3123d.jpg">
+       </div>
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/phox/photos/101"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38dbc84ac.jpg">
+       </div>
+
+       <div class="vignette">
+         <img data-uri="/www/canals5/phox/photos/102"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38db67677.jpg">
+       </div>
+
+       <div class="vignette">
+         <img data-uri="/www/canals5/phox/photos/103"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38db0444d.jpg">
+       </div>
+
+       <div class="vignette">
+         <img data-uri="/www/canals5/phox/photos/104"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38daa09e8.jpg">
+       </div>
+
+     </div>
+
+
+    <!-- lightbox container should come here -->
+
+
+  <div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
+
+       <div id="lightbox">
+           <div id="lightbox-head">
+               <p id="lightbox_close">-X-</p>
+               <h1 id="lightbox_title">titre photo</h1>
+           </div>
+
+           <div id="lightbox-img">
+               <img id="lightbox_full_img" src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/large/img_586d38daa09e8.jpg">
+           </div>
+       </div>
+
+  </div>
+
+
+</main>
+
+<script type="module" src="photobox.js"></script>
+
+</body>
+</html>

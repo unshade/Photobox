@@ -1,10 +1,11 @@
 import conf from './conf.js'
 
-function loadRessource() {
-    return fetch(conf.url, {
+function loadRessource(photosURI) {
+    // Fetch les informations depuis l'API
+    return fetch(photosURI, {
         method: 'get',
         credentials : 'include'
-    }).then((e) => e.json())
+    }).then((response) => response.json())
 }
 
 export default {

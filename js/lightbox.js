@@ -5,6 +5,23 @@ function load(node) {
     return photoloader.loadRessource(dataUri)
 }
 
+function show() {
+
+    document.getElementById('lightbox_container')
+        .classList.toggle('lightbox_container--hidden')
+
+}
+
+function hide() {
+    document.querySelector('#lightbox_close')
+        .addEventListener("click", () => {
+            document.getElementById('lightbox_container')
+                .classList.toggle('lightbox_container--hidden')
+        })
+}
+
 export default {
-    load
+    load,
+    show,
+    hide
 }

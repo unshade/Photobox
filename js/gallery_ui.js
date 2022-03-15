@@ -15,7 +15,8 @@ function display_galerie(gallery) {
     )
 
     gallery_container.addEventListener('click', ev => {
-        console.log('caca')
+        let lightbox_container = document.getElementById('lightbox_container')
+        lightbox_container.classList.toggle('lightbox_container--hidden')
         lightbox.load(ev.target).then(data => lightbox_ui.display_lightbox(data))
     })
 

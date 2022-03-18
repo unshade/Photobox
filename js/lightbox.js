@@ -13,6 +13,8 @@ function show() {
 function hide() {
     document.getElementById('lightbox_container')
         .classList.toggle('lightbox_container--hidden')
+    document.querySelector("#lightbox_title").innerHTML = " "
+    document.querySelector("#lightbox_full_img").src = " "
 }
 
 export default {

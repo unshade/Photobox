@@ -28,4 +28,18 @@ document.querySelector("#previous").addEventListener('click', (e) => {
     })
 })
 
+document.querySelector("#first").addEventListener('click', (e) => {
+    gallery.first().then(data => {
+        gallery_ui.display_galerie(data)
+        gallery.updateJson(data)
+    })
+})
+
+document.querySelector("#last").addEventListener('click', (e) => {
+    gallery.last().then(data => {
+        gallery_ui.display_galerie(data)
+        gallery.updateJson(data)
+    })
+})
+
 

@@ -19,6 +19,16 @@ function prev() {
     return load()
 }
 
+function first() {
+    toLoad = conf.webetu + json.links.first.href
+    return load()
+}
+
+function last() {
+    toLoad = conf.webetu + json.links.last.href
+    return load()
+}
+
 function updateJson(newJson) {
     json = newJson
 }
@@ -27,5 +37,7 @@ export default {
     load,
     next,
     prev,
+    first,
+    last,
     updateJson
 }

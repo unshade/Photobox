@@ -7,39 +7,34 @@ document.querySelector('#lightbox_close')
         lightbox_ui.hide()
     })
 document.querySelector('#load_gallery')
-    .addEventListener('click', e => {
-        gallery.load().then(data => {
-            gallery_ui.display_galerie(data)
-            gallery.updateJson(data)
-        })
+    .addEventListener('click', async (e) => {
+        let json = await gallery.load()
+        gallery_ui.display_galerie(json)
+        gallery.updateJson(json)
     })
 
-document.querySelector("#next").addEventListener('click', (e) => {
-    gallery.next().then(data => {
-        gallery_ui.display_galerie(data)
-        gallery.updateJson(data)
-    })
+document.querySelector("#next").addEventListener('click', async (e) => {
+    let json = await gallery.next()
+    gallery_ui.display_galerie(json)
+    gallery.updateJson(json)
 })
 
-document.querySelector("#previous").addEventListener('click', (e) => {
-    gallery.prev().then(data => {
-        gallery_ui.display_galerie(data)
-        gallery.updateJson(data)
-    })
+document.querySelector("#previous").addEventListener('click', async (e) => {
+    let json = await gallery.prev()
+    gallery_ui.display_galerie(json)
+    gallery.updateJson(json)
 })
 
-document.querySelector("#first").addEventListener('click', (e) => {
-    gallery.first().then(data => {
-        gallery_ui.display_galerie(data)
-        gallery.updateJson(data)
-    })
+document.querySelector("#first").addEventListener('click', async (e) => {
+    let json = await gallery.first()
+    gallery_ui.display_galerie(json)
+    gallery.updateJson(json)
 })
 
-document.querySelector("#last").addEventListener('click', (e) => {
-    gallery.last().then(data => {
-        gallery_ui.display_galerie(data)
-        gallery.updateJson(data)
-    })
+document.querySelector("#last").addEventListener('click', async (e) => {
+    let json = await gallery.last()
+    gallery_ui.display_galerie(json)
+    gallery.updateJson(json)
 })
 
 

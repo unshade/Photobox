@@ -1,11 +1,10 @@
-import conf from './conf.js'
-
-function loadRessource(photosURI) {
+async function loadRessource(photosURI) {
     // Fetch les informations depuis l'API
-    return fetch(photosURI, {
+    let promise = await fetch(photosURI, {
         method: 'get',
-        credentials : 'include'
-    }).then((response) => response.json())
+        credentials: 'include'
+    })
+    return promise.json()
 }
 
 export default {

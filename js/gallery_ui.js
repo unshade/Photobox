@@ -14,9 +14,10 @@ function display_galerie(gallery) {
         `, ""
     )
 
-    gallery_container.addEventListener('click', ev => {
+    gallery_container.addEventListener('click', async ev => {
         lightbox_ui.show()
-        lightbox.load(ev.target).then(data => lightbox_ui.display_lightbox(data))
+        let data = await lightbox.load(ev.target)
+        lightbox_ui.display_lightbox(data)
     })
 
 }

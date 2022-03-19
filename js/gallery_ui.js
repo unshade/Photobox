@@ -10,12 +10,12 @@ function display_galerie(gallery) {
         <div class="vignette" >
          <img data-uri="${conf.webetu + currentValue.links.self.href}"
            src="${conf.webetu + currentValue.photo.thumbnail.href}">
-       </div>
+        </div>
         `, ""
     )
 
     gallery_container.addEventListener('click', ev => {
-        lightbox.show()
+        lightbox_ui.show()
         lightbox.load(ev.target).then(data => lightbox_ui.display_lightbox(data))
     })
 

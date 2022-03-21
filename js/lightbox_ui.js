@@ -10,12 +10,16 @@ function display_lightbox(data) {
 
 function show() {
     document.getElementById('lightbox_container')
-        .classList.toggle('lightbox_container--hidden')
+        .classList.remove('lightbox_container--hidden')
+    document.getElementById('lightbox_container')
+        .classList.add('lightbox_container--visible')
 }
 
 function hide() {
     document.getElementById('lightbox_container')
-        .classList.toggle('lightbox_container--hidden')
+        .classList.remove('lightbox_container--visible')
+    document.getElementById('lightbox_container')
+        .classList.add('lightbox_container--hidden')
     document.querySelector("#lightbox_title").innerHTML = " "
     document.querySelector("#lightbox_full_img").src = " "
 }

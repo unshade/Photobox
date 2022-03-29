@@ -16,8 +16,8 @@ function display_galerie(gallery) {
                         <span class="sr-only">View details for IMG_4985.HEIC</span>
                     </button>
                 </div>
-                <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">IMG_4985.HEIC</p>
-                <p class="block text-sm font-medium text-gray-500 pointer-events-none">3.9 MB</p>
+                <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">${currentValue.photo.titre}</p>
+                <p class="block text-sm font-medium text-gray-500 pointer-events-none">Id : ${currentValue.photo.id}</p>
             </li>
         `, ""
     )

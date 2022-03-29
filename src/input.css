@@ -8,6 +8,16 @@
         width: 90%;
         margin: 0 auto;
     }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex-grow: 1;
+    }
     
     .container-min {
         max-width: 1000px;

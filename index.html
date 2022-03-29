@@ -1,74 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet"   href="css/photobox.css">
-
+    <link rel="stylesheet" href="dist/output.css">
     <title>photobox</title>
 </head>
+
 <body>
 
-<nav>
-    <button id="load_gallery">load</button>
-    <button id="previous">prev page</button>
-    <button id="next">next page</button>
-    <button id="first">first</button>
-    <button id="last">last</button>
-</nav>
+    <header class="bg-indigo-600">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+            <div class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
+                <div class="flex items-center">
+                    <a href="#">
+                        <span class="sr-only">Photobox</span>
+                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
+                            alt="">
+                    </a>
+                    <div class="hidden ml-10 space-x-8 lg:block">
+                        <button id="load_gallery"
+                            class="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+                            Load </button>
+
+                        <button id="previous"
+                            class="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+                            Previous </button>
+
+                        <button id="next"
+                            class="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+                            Next </button>
+
+                        <button id="first"
+                            class="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+                            First </button>
+
+                        <button id="last"
+                            class="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+                            last </button>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
-<main id="gallery">
-
-     <div class="gallery-container" id="gallery_container">
+    <main id="gallery" class="container-large">
 
 
-     </div>
+        <div class="gallery-container" id="gallery_container">
 
 
-    <!-- lightbox container should come here -->
+        </div>
 
 
-  <div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
+        <!-- lightbox container should come here -->
 
-       <div id="lightbox">
-           <div id="lightbox-head">
-               <p id="lightbox_close">-X-</p>
-               <h1 id="lightbox_title"></h1>
-           </div>
+        <div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
 
-           <div id="lightbox_controls">
-                <button id="lightbox_prev">prev</button>
-                <button id="lightbox_next">next</button>
-           </div>
-           <div id="lightbox-img">
-               <img id="lightbox_full_img" src="">
-           </div>
+            <div id="lightbox">
+                <div id="lightbox-head">
+                    <p id="lightbox_close">-X-</p>
+                    <h1 id="lightbox_title"></h1>
+                </div>
 
-           <div id="lightbox-infos">
-               <div id="lightbox_descr"></div>``
-               <div>
-                   <div id="idimg"></div>
-                   <div id="format"></div>
-                   <div id="type"></div>
-                   <div id="size"></div>
-                   <div id="imgwidth"></div>
-                   <div id="imgheight"></div>
-               </div>
-               <div id="comments_container">
+                <div id="lightbox_controls">
+                    <button id="lightbox_prev">prev</button>
+                    <button id="lightbox_next">next</button>
+                </div>
+                <div id="lightbox-img">
+                    <img id="lightbox_full_img" src="">
+                </div>
+
+                <div id="lightbox-infos">
+                    <div id="lightbox_descr"></div>``
+                    <div>
+                        <div id="idimg"></div>
+                        <div id="format"></div>
+                        <div id="type"></div>
+                        <div id="size"></div>
+                        <div id="imgwidth"></div>
+                        <div id="imgheight"></div>
+                    </div>
+                    <div id="comments_container">
+                    </div>
+
+                </div>
+
+
             </div>
 
-           </div>
-
-           
-       </div>
-
-  </div>
+        </div>
 
 
-</main>
+    </main>
 
-<script type="module" src="js/photobox.js"></script>
+    <script type="module" src="js/photobox.js"></script>
 
 </body>
+
 </html>

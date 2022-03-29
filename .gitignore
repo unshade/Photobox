@@ -93,4 +93,6 @@ fabric.properties
 *.pdf
 *.xml
 
+node_modules/
+
 # End of https://www.toptal.com/developers/gitignore/api/webstorm+all

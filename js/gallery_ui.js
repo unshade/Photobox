@@ -16,9 +16,10 @@ function display_galerie(gallery) {
 
     gallery_container.addEventListener('click', async ev => {
         let data = await lightbox.load(ev.target)
+        lightbox.updateCurrent(data.photo.id)
         lightbox_ui.display_lightbox(data)
         lightbox_ui.show()
-        console.log("img click")
+
     })
 
 }

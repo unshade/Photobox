@@ -566,6 +566,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -728,79 +732,81 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-.container-large {
-  max-width: 1600px;
-  width: 90%;
-  margin: 0 auto;
-}
+@layer component {
+  .container-large {
+    max-width: 1600px;
+    width: 90%;
+    margin: 0 auto;
+  }
 
-.container-min {
-  max-width: 1000px;
-  width: 90%;
-  margin:  0 auto;
-}
+  .container-min {
+    max-width: 1000px;
+    width: 90%;
+    margin:  0 auto;
+  }
 
-.gallery-container {
-  padding: 3em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
-  grid-gap: .2em;
-}
+  .gallery-container {
+    padding: 3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
+    grid-gap: .2em;
+  }
 
-.vignette img {
-  max-width: 100%;
-  height: auto;
-}
+  .vignette img {
+    max-width: 100%;
+    height: auto;
+  }
 
-/**
-  photobox : Lightbox
- */
+  /**
+      photobox : Lightbox
+     */
 
-.lightbox_container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.9);
-}
+  .lightbox_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+  }
 
-.lightbox_container--hidden {
-  display : none;
-}
+  .lightbox_container--hidden {
+    display : none;
+  }
 
-.lightbox_container--visible {
-  display : block;
-}
+  .lightbox_container--visible {
+    display : block;
+  }
 
-#lightbox-infos {
-  background: rgba(0, 0, 0, 0.9);
-}
+  #lightbox-infos {
+    background: rgba(0, 0, 0, 0.9);
+  }
 
-#lightbox {
-  width: 100vw;
-  height: 100vh;
-}
+  #lightbox {
+    width: 100vw;
+    height: 100vh;
+  }
 
-#lightbox-img {
-  width: 100%;
-  height: 92%;
-  position:relative;
-}
+  #lightbox-img {
+    width: 100%;
+    height: 92%;
+    position:relative;
+  }
 
-#lightbox-img img {
-  display: block;
-  margin: auto;
-  width: auto;
-  height: auto;
-  max-height: 100%;
-  max-width: 100%;
-}
+  #lightbox-img img {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-#lightbox-head {
-  height: 8%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: floralwhite;
+  #lightbox-head {
+    height: 8%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: floralwhite;
+  }
 }
 
 .focus-within\:ring-2:focus-within {
@@ -876,3 +882,4 @@ Ensure the default browser behavior of the `hidden` attribute.
          column-gap: 2rem;
   }
 }
+

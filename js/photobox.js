@@ -2,12 +2,12 @@ import gallery from "./gallery.js";
 import gallery_ui from "./gallery_ui.js";
 import lightbox_ui from "./lightbox_ui.js";
 import lightbox from "./lightbox.js";
-import conf from "./conf.js";
 
 document.querySelector('#lightbox_close')
     .addEventListener("click", () => {
         lightbox_ui.hide()
     })
+
 document.querySelector('#load_gallery')
     .addEventListener('click', async () => {
         let json = await gallery.load()
@@ -50,11 +50,7 @@ document.querySelector("#lightbox_prev")
     });
 
 document.querySelector("#cancel_button")
-    .addEventListener('click', () => {
-        document.querySelector("#com_content").value = ""
-        document.querySelector("#com_title").value = ""
-        document.querySelector("#username").value = ""
-    });
+    .addEventListener('click', clearForm);
 
 document.querySelector("#save_button")
     .addEventListener('click', async () => {
@@ -63,8 +59,12 @@ document.querySelector("#save_button")
         let username = document.querySelector("#username").value
         await lightbox.addComment(title, username, content)
         await lightbox.update_lightbox()
-        document.querySelector("#com_content").value = ""
-        document.querySelector("#com_title").value = ""
-        document.querySelector("#username").value = ""
+        clearForm()
     });
 
+
+function clearForm() {
+    document.querySelector("#com_content").value = ""
+    document.querySelector("#com_title").value = ""
+    document.querySelector("#username").value = ""
+}

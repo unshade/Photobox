@@ -1,6 +1,5 @@
 import photoloader from "./photoloader.js";
 import conf from "./conf.js";
-import gallery_ui from "./gallery_ui.js";
 
 let json
 let toLoad = conf.photos

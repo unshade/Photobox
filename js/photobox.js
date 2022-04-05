@@ -62,6 +62,7 @@ document.querySelector("#save_button")
         let title = document.querySelector("#com_title").value
         let username = document.querySelector("#username").value
         await lightbox.addComment(title, username, content)
+        await lightbox.update_lightbox()
         document.querySelector("#com_content").value = ""
         document.querySelector("#com_title").value = ""
         document.querySelector("#username").value = ""

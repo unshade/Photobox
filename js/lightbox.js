@@ -22,6 +22,10 @@ async function next() {
     await lightbox_ui.display_lightbox(json)
 }
 
+async function update_lightbox() {
+    let json = await loader(conf.photos + current)
+    await lightbox_ui.display_lightbox(json)
+}
 async function prev() {
     current = current - 1
 
@@ -46,7 +50,7 @@ const fetcher = async (URL, content) => {
         console.log('Erreur serveur');
         return null;
     }
-    
+
     return payload;
 };
 
@@ -58,7 +62,7 @@ async function addComment(titre, pseudo, content) {
     }
 
 
-    const response = await fetcher(`${conf.webetu}/www/canals5/phox/api/photos/${current}/comments`, {
+    await fetcher(`${conf.webetu}/www/canals5/phox/api/photos/${current}/comments`, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -66,9 +70,10 @@ async function addComment(titre, pseudo, content) {
         }
     });
 
+
 }
 
 export default {
     load,
-    next, prev, current, updateCurrent, addComment, loader
+    next, prev, current, updateCurrent, addComment, loader, update_lightbox
 }

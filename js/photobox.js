@@ -2,6 +2,7 @@ import gallery from "./gallery.js";
 import gallery_ui from "./gallery_ui.js";
 import lightbox_ui from "./lightbox_ui.js";
 import lightbox from "./lightbox.js";
+import conf from "./conf.js";
 
 document.querySelector('#lightbox_close')
     .addEventListener("click", () => {
@@ -39,13 +40,30 @@ document.querySelector("#last").addEventListener('click', async () => {
 })
 
 document.querySelector("#lightbox_next")
-    .addEventListener('click', () => {
-        lightbox.next()
+    .addEventListener('click', async () => {
+        await lightbox.next()
     });
 
 document.querySelector("#lightbox_prev")
-    .addEventListener('click', () => {
-        lightbox.prev()
+    .addEventListener('click', async () => {
+        await lightbox.prev()
     });
 
+document.querySelector("#cancel_button")
+    .addEventListener('click', () => {
+        document.querySelector("#com_content").value = ""
+        document.querySelector("#com_title").value = ""
+        document.querySelector("#username").value = ""
+    });
+
+document.querySelector("#save_button")
+    .addEventListener('click', async () => {
+        let content = document.querySelector("#com_content").value
+        let title = document.querySelector("#com_title").value
+        let username = document.querySelector("#username").value
+        await lightbox.addComment(title, username, content)
+        document.querySelector("#com_content").value = ""
+        document.querySelector("#com_title").value = ""
+        document.querySelector("#username").value = ""
+    });
 

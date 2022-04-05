@@ -9,16 +9,15 @@ async function display_lightbox(data) {
     let type = document.getElementById("type")
     let size = document.getElementById("size")
     let imgwidth = document.getElementById("imgwidth")
-    let imgheight = document.getElementById("imgheight")
 
 
     title.innerHTML = data.photo.titre
     lightbox_full_img.src = conf.webetu + data.photo.url.href
     descr.innerHTML = data.photo.descr
-    format.innerHTML = data.photo.format
-    type.innerHTML = data.photo.type
-    size.innerHTML = data.photo.size + " octets"
-    imgwidth.innerHTML = "Taille : " + data.photo.width + "x" + data.photo.height
+    format.innerHTML = "Format : " + data.photo.format
+    type.innerHTML = "Type : " + data.photo.type
+    size.innerHTML = "Taille sur le disque : " + data.photo.size + " octets"
+    imgwidth.innerHTML = "Taille : " + data.photo.width + "x" + data.photo.height + " pixels"
 
     let comments = await photoloader.loadRessource(conf.webetu + data.links.comments.href)
 
@@ -27,11 +26,11 @@ async function display_lightbox(data) {
     document.getElementById("comments_container").innerHTML = comments.reduce((acc, cur) =>
         acc +
             `
-            <div id="${cur.id}" class="mt-10">
-                 <h2>${cur.titre}</h2>
-                 <div>${cur.content}</div>
-                 <div>${cur.pseudo}</div>
-                 <div>${cur.date}</div>
+            <div id="${cur.id}" class="mb-20">
+                 <h2>Titre : ${cur.titre}</h2>
+                 <div>Ecris par : ${cur.pseudo}</div>
+                 <div class="mt-2">${cur.content}</div>
+                 <div class="mt-2">Date d'émission : ${cur.date}</div>
             </div>
             `
     , "")

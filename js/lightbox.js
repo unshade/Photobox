@@ -1,5 +1,6 @@
 import photoloader from "./photoloader.js";
 import conf from "./conf.js";
+import lightbox_ui from "./lightbox_ui.js";
 
 let current
 
@@ -18,8 +19,7 @@ async function next() {
     document.getElementById("lightbox_full_img")
         .src = ""
     let json = await loader(conf.photos + current)
-    document.getElementById("lightbox_full_img")
-        .src = conf.webetu + json.photo.url.href
+    await lightbox_ui.display_lightbox(json)
 }
 
 async function prev() {
@@ -28,8 +28,8 @@ async function prev() {
     let json = await loader(conf.photos + current)
     document.getElementById("lightbox_full_img")
         .src = ""
-    document.getElementById("lightbox_full_img")
-        .src = conf.webetu + json.photo.url.href
+    await lightbox_ui.display_lightbox(json)
+
 
 }
 

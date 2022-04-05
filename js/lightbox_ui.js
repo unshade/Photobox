@@ -17,9 +17,8 @@ async function display_lightbox(data) {
     descr.innerHTML = data.photo.descr
     format.innerHTML = data.photo.format
     type.innerHTML = data.photo.type
-    size.innerHTML = data.photo.size
-    imgwidth.innerHTML = data.photo.width
-    imgheight.innerHTML = data.photo.height
+    size.innerHTML = data.photo.size + " octets"
+    imgwidth.innerHTML = "Taille : " + data.photo.width + "x" + data.photo.height
 
     let comments = await photoloader.loadRessource(conf.webetu + data.links.comments.href)
 
@@ -28,7 +27,7 @@ async function display_lightbox(data) {
     document.getElementById("comments_container").innerHTML = comments.reduce((acc, cur) =>
         acc +
             `
-            <div id="${cur.id}">
+            <div id="${cur.id}" class="mt-10">
                  <h2>${cur.titre}</h2>
                  <div>${cur.content}</div>
                  <div>${cur.pseudo}</div>

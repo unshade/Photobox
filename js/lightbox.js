@@ -15,11 +15,14 @@ function loader(toLoad) {
 
 async function next() {
     current = current + 1
-
-    document.getElementById("lightbox_full_img")
-        .src = ""
     let json = await loader(conf.photos + current)
-    await lightbox_ui.display_lightbox(json)
+
+    if (json.type === "ressource") {
+        document.getElementById("lightbox_full_img")
+            .src = ""
+        await lightbox_ui.display_lightbox(json)
+    } else current = current - 1
+
 }
 
 async function update_lightbox() {
@@ -30,9 +33,12 @@ async function prev() {
     current = current - 1
 
     let json = await loader(conf.photos + current)
-    document.getElementById("lightbox_full_img")
-        .src = ""
-    await lightbox_ui.display_lightbox(json)
+    if (json.type === "ressource") {
+        document.getElementById("lightbox_full_img")
+            .src = ""
+        await lightbox_ui.display_lightbox(json)
+    } else current = current + 1
+
 }
 
 function updateCurrent(newCurr) {

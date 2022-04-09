@@ -13,7 +13,7 @@ function display_galerie(gallery) {
                     <img data-uri="${conf.webetu + currentValue.links.self.href}"
            src="${conf.webetu + currentValue.photo.thumbnail.href}" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
                     <button type="button" class="absolute inset-0 focus:outline-none">
-                        <span class="sr-only">View details for IMG_4985.HEIC</span>
+                        <span class="sr-only">View details</span>
                     </button>
                 </div>
                 <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">${currentValue.photo.titre}</p>
